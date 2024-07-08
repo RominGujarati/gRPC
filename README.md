@@ -53,3 +53,5 @@ Example gRPCurl Commands:
 
 Configuration
 No additional configuration is required to run the gRPC service locally. Ensure port 50051 is accessible and not blocked by a firewall.
+
+I believe the approach I am currently using—storing user details in-memory rather than using a traditional database—is sufficient for demonstrating the functionality of the gRPC service.

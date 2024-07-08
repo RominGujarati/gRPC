@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+message User {
+  int32 id = 1;
+  string fname = 2;
+  string city = 3;
+  int64 phone = 4;
+  float height = 5;
+  bool married = 6;
+}
+
+service UserService {
+  rpc GetUserById (UserRequest) returns (User);
+  rpc GetUsersByIds (UserIdsRequest) returns (stream User);
+  rpc SearchUsers (SearchRequest) returns (stream User);
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserIdsRequest {
+  repeated int32 ids = 1;
+}
+
+message SearchRequest {
+  string city = 1;
+  int64 phone = 2;
+  bool married = 3;
+  string fname = 4;
+  int64 height = 5;
+  int64 id = 6;
+}
